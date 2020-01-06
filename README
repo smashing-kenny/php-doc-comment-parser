@@ -9,6 +9,6 @@ cd ..
 make
 sudo make install
 
-add to php.ini extension=dql.so
+add to php.ini extension=doc.so
 
-php -m | grep DQL
+php -m | grep DocComment
