@@ -1,0 +1,12 @@
+{
+	"folders": [
+		{
+			"path": "/home/sk/Trackpoint/dependency-injector-doc-parser"
+		}
+	],
+	"settings": {
+		"files.associations": {
+			"typeinfo": "cpp"
+		}
+	}
+}

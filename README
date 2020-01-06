@@ -1,0 +1,14 @@
+How to build ?
+phpize 
+./configure
+
+cd src
+make all
+cd ..
+
+make
+sudo make install
+
+add to php.ini extension=dql.so
+
+php -m | grep DQL
