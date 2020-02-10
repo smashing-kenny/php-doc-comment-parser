@@ -1,7 +1,7 @@
-srcdir = /home/sk/Trackpoint/dependency-injector-doc-parser
-builddir = /home/sk/Trackpoint/dependency-injector-doc-parser
-top_srcdir = /home/sk/Trackpoint/dependency-injector-doc-parser
-top_builddir = /home/sk/Trackpoint/dependency-injector-doc-parser
+srcdir = /home/sk/Trackpoint/doc-comment-parser
+builddir = /home/sk/Trackpoint/doc-comment-parser
+top_srcdir = /home/sk/Trackpoint/doc-comment-parser
+top_builddir = /home/sk/Trackpoint/doc-comment-parser
 EGREP = /bin/grep -E
 SED = /bin/sed
 CONFIGURE_COMMAND = './configure'
@@ -19,7 +19,7 @@ prefix = /usr
 exec_prefix = $(prefix)
 libdir = ${exec_prefix}/lib
 prefix = /usr
-phplibdir = /home/sk/Trackpoint/dependency-injector-doc-parser/modules
+phplibdir = /home/sk/Trackpoint/doc-comment-parser/modules
 phpincludedir = /usr/include/php/20190902
 CC = cc
 CFLAGS = -g -O2
@@ -187,12 +187,12 @@ prof-use:
 
 .PHONY: all clean install distclean test prof-gen prof-clean prof-use
 .NOEXPORT:
-src/doc.lo: /home/sk/Trackpoint/dependency-injector-doc-parser/src/doc.c
-	$(LIBTOOL) --mode=compile $(CC)  -I. -I/home/sk/Trackpoint/dependency-injector-doc-parser $(COMMON_FLAGS) $(CFLAGS_CLEAN) $(EXTRA_CFLAGS)  -c /home/sk/Trackpoint/dependency-injector-doc-parser/src/doc.c -o src/doc.lo 
-src/scanner.lo: /home/sk/Trackpoint/dependency-injector-doc-parser/src/scanner.c
-	$(LIBTOOL) --mode=compile $(CC)  -I. -I/home/sk/Trackpoint/dependency-injector-doc-parser $(COMMON_FLAGS) $(CFLAGS_CLEAN) $(EXTRA_CFLAGS)  -c /home/sk/Trackpoint/dependency-injector-doc-parser/src/scanner.c -o src/scanner.lo 
-src/parser.lo: /home/sk/Trackpoint/dependency-injector-doc-parser/src/parser.c
-	$(LIBTOOL) --mode=compile $(CC)  -I. -I/home/sk/Trackpoint/dependency-injector-doc-parser $(COMMON_FLAGS) $(CFLAGS_CLEAN) $(EXTRA_CFLAGS)  -c /home/sk/Trackpoint/dependency-injector-doc-parser/src/parser.c -o src/parser.lo 
+src/doc.lo: /home/sk/Trackpoint/doc-comment-parser/src/doc.c
+	$(LIBTOOL) --mode=compile $(CC)  -I. -I/home/sk/Trackpoint/doc-comment-parser $(COMMON_FLAGS) $(CFLAGS_CLEAN) $(EXTRA_CFLAGS)  -c /home/sk/Trackpoint/doc-comment-parser/src/doc.c -o src/doc.lo 
+src/scanner.lo: /home/sk/Trackpoint/doc-comment-parser/src/scanner.c
+	$(LIBTOOL) --mode=compile $(CC)  -I. -I/home/sk/Trackpoint/doc-comment-parser $(COMMON_FLAGS) $(CFLAGS_CLEAN) $(EXTRA_CFLAGS)  -c /home/sk/Trackpoint/doc-comment-parser/src/scanner.c -o src/scanner.lo 
+src/parser.lo: /home/sk/Trackpoint/doc-comment-parser/src/parser.c
+	$(LIBTOOL) --mode=compile $(CC)  -I. -I/home/sk/Trackpoint/doc-comment-parser $(COMMON_FLAGS) $(CFLAGS_CLEAN) $(EXTRA_CFLAGS)  -c /home/sk/Trackpoint/doc-comment-parser/src/parser.c -o src/parser.lo 
 $(phplibdir)/doc.la: ./doc.la
 	$(LIBTOOL) --mode=install cp ./doc.la $(phplibdir)
 
