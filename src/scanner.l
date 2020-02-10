@@ -33,11 +33,8 @@
 }
 
 SCOPE_RESOLUTION        TOKEN(SCOPE_RESOLUTION)
-REGISTER                        TOKEN(REGISTER)
-INJECT                          TOKEN(INJECT)
+ASSIGN                          TOKEN(ASSIGN)
 AT                                      TOKEN(AT)
-DI                                      TOKEN(DI)
-ASSIGN                                      TOKEN(ASSIGN)
 
 "@" { 
 	//printf("AT\n");

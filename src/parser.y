@@ -41,22 +41,47 @@
 %type <options> options
 
 /* Keywords */
-%token SCOPE_RESOLUTION REGISTER ASSIGN INJECT AT DI
+%token SCOPE_RESOLUTION ASSIGN AT
 
 %%
 input:
-	AT DI SCOPE_RESOLUTION REGISTER '(' options ')' {
-		add_index_long(context, KW_STATEMENT, KW_REGISTER);
-		add_index_zval(context, KW_OPTIONS, &$6);
-	}
-	| AT DI SCOPE_RESOLUTION INJECT '(' options ')' {
-		add_index_long(context, KW_STATEMENT, KW_INJECT);
-		add_index_zval(context, KW_OPTIONS, &$6);
+	AT IDENTIFIER SCOPE_RESOLUTION IDENTIFIER '(' options ')' {
+
+		zval *parameter;
+		if ((parameter = zend_hash_str_find(Z_ARRVAL_P(context), $2, strlen($2))) == NULL) {
+
+			parameter = (zval *) safe_emalloc(sizeof(zval), 1, 0);
+			array_init(parameter);
+
+			zend_hash_str_update(
+				Z_ARRVAL_P(context),
+				$2,
+				strlen($2),
+				parameter);
+		}
+/*
+		zval *options;
+		if ((options = zend_hash_str_find(Z_ARRVAL_P(parameter), $4, strlen($4))) != NULL) {
+ 			zend_hash_merge(
+				Z_ARRVAL_P(options), 
+				Z_ARRVAL_P(&$6), 
+				zval_add_ref, 
+				1); 
+		}else{
+			options = &$6;
+		}
+*/
+
+		zend_hash_str_update(
+			Z_ARRVAL_P(parameter),
+			$4,
+			strlen($4),
+			&$6);
+
 	}
 	| error input{
 		yyerrok;
 		yyclearin;
-		//printf("skip error\n");
 	}
 	;
 
@@ -109,7 +134,7 @@ option:
 		$$.type  = 0;
 		$$.name = malloc(strlen($1)+1);
 		memcpy($$.name, $1, strlen($1)+1);
-		strtolower($$.name);
+		//strtolower($$.name);
 
 		$$.value = malloc(strlen($3)+1);
 		memcpy($$.value, $3, strlen($3)+1);
@@ -118,7 +143,7 @@ option:
 		$$.type  = 0;
 		$$.name = malloc(strlen($1)+1);
 		memcpy($$.name, $1, strlen($1)+1);
-		strtolower($$.name);
+		//strtolower($$.name);
 
 		$$.value = malloc(strlen($3)+1);
 		memcpy($$.value, $3, strlen($3)+1);
@@ -127,7 +152,7 @@ option:
 		$$.type  = 2;
 		$$.name = malloc(strlen($1)+1);
 		memcpy($$.name, $1, strlen($1)+1);
-		strtolower($$.name);
+		//strtolower($$.name);
 
 		$$.value = malloc(sizeof(float));
 		memcpy($$.value, &$3, sizeof(float));
@@ -136,7 +161,7 @@ option:
 		$$.type  = 1;
 		$$.name = malloc(strlen($1)+1);
 		memcpy($$.name, $1, strlen($1)+1);
-		strtolower($$.name);
+		//strtolower($$.name);
 
 		$$.value = malloc(sizeof(int));
 		memcpy($$.value, &$3, sizeof(int));

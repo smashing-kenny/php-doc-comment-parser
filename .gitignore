@@ -1,31 +1,19 @@
-/autom4te.cache/*
-/build/*
-/include/*
-/modules/*
-/src/.libs/*
+# Ignore everything
+*
 
-.libs/*
-.vscode/*
+# But not these files...
+!.gitignore
+!config.m4
+!Makefile
+!mk.sh
+!README
+!test.php
+!ws.code-workspace
 
-/Makefile
-Makefile.fragments
-Makefile.global
-Makefile.objects
-
-acinclude.m4
-aclocal.m4
-config.guess
-config.h.in
-config.log
-config.nice
-config.status
-config.sub
-configure
-configure.ac
-dql.la
-libtool
-ltmain.sh
-missing
-mkinstalldirs
-
-
+!src/doc.c
+!src/doc.h
+!src/generator.py
+!src/keywords.txt
+!src/Makefile
+!src/parser.y
+!src/scanner.l

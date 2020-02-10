@@ -32,7 +32,7 @@ with open("keywords.txt", 'r') as fh:
 	line = "%token"
 	max_len = 60
 
-	print "/* SQL Keywords */"
+	print "/* Keywords */"
 	for keyword in keywords:
 
 		if len(line + " " + keyword) > max_len:

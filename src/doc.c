@@ -74,14 +74,14 @@ const zend_function_entry doc_functions[] = {
 PHP_MINIT_FUNCTION(doc)
 {
 	zend_class_entry class_entry;
-	INIT_CLASS_ENTRY(class_entry, "Trackpoint\\DependencyInjector\\DocComment", doc_functions);
+	INIT_CLASS_ENTRY(class_entry, "Trackpoint\\DocComment", doc_functions);
 
 	doc_class_entry = zend_register_internal_class(&class_entry);
 
-	REGISTER_DQL_CLASS_CONST_LONG("STATEMENT", (zend_long)KW_STATEMENT);
-	REGISTER_DQL_CLASS_CONST_LONG("REGISTER", (zend_long)KW_REGISTER);
-	REGISTER_DQL_CLASS_CONST_LONG("OPTIONS", (zend_long)KW_OPTIONS);
-	REGISTER_DQL_CLASS_CONST_LONG("INJECT", (zend_long)KW_INJECT);
+	//REGISTER_DQL_CLASS_CONST_LONG("STATEMENT", (zend_long)KW_STATEMENT);
+	//REGISTER_DQL_CLASS_CONST_LONG("REGISTER", (zend_long)KW_REGISTER);
+	//REGISTER_DQL_CLASS_CONST_LONG("OPTIONS", (zend_long)KW_OPTIONS);
+	//REGISTER_DQL_CLASS_CONST_LONG("INJECT", (zend_long)KW_INJECT);
 
 	return SUCCESS;
 }
