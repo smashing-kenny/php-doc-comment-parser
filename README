@@ -1,4 +1,6 @@
-How to build ?
+# PHP nativ extention for parsing DocComment
+
+#How to build ?
 phpize 
 ./configure
 
@@ -9,6 +11,6 @@ cd ..
 make
 sudo make install
 
-add to php.ini extension=dql.so
+add to php.ini extension=dc.so
 
-php -m | grep DQL
+php -m | grep DocComment
