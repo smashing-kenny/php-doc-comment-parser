@@ -30,7 +30,7 @@ sudo make install
 ```
 add to php.ini extension=doc.so  
 
-## Test
+## Check
 ```shell
 php -m | grep DocComment  
 ```
