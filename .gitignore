@@ -6,9 +6,8 @@
 !config.m4
 !Makefile
 !mk.sh
-!README
+!README.md
 !test.php
-!ws.code-workspace
 
 !src/doc.c
 !src/doc.h
