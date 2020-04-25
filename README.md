@@ -1,6 +1,6 @@
 # PHP nativ extention for parsing DocComment
 
-##Dependency
+## Dependency
 
 - bison
 sudo apt-get install -y bison
@@ -12,15 +12,15 @@ sudo apt-get install -y flex
 sudo apt-get install -y php-dev
 
 
-##How to build ?
+## How to build ?
 
-###Build parse
+### Build parse
 
 cd src
 make all
 cd ..
 
-###Build php-extension
+### Build php-extension
 
 phpize 
 ./configure
@@ -30,11 +30,13 @@ sudo make install
 
 add to php.ini extension=doc.so
 
-##Test
+## Test
 php -m | grep DocComment
 
 
-##Example
+## Example
+
+### Simple usage example
 ```php
 use Trackpoint\DocComment;
 
@@ -55,6 +57,7 @@ $reflection = new ReflectionClass('TestClass');
 var_dump(DocComment::parse($reflection->getDocComment()));
 ```
 
+### Output
 ```
 array(1) {
   ["NAMESPACE"]=>
