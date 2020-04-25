@@ -3,14 +3,12 @@
 ## Dependency
 
 - bison
-sudo apt-get install -y bison
-
 - flex
-sudo apt-get install -y flex
-
 - php-dev
-sudo apt-get install -y php-dev
 
+apt install -y bison
+apt install -y flex
+apt install -y php-dev
 
 ## How to build ?
 
