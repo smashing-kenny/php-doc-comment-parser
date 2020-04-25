@@ -49,7 +49,7 @@ input:
 
 		zval *parameter;
 
-		//Perevodim NAMESPACE i PARAMETR v verhnee polozenie
+		//Perevodim NAMESPACE i PARAMETR v verhnee register
 		strtoupper($2);
 		strtoupper($4);
 

@@ -1,11 +1,13 @@
 <?php
 
+use Trackpoint\DocComment;
 
 /** 
 * A test class
 *
-* @DI::inject(TyPeSJksJksj=Singelton, Test=Singelton)
-* @DI::next(balb=tttt)
+* @Namespace::propery1(Option1=Value, Option2=Value)
+* @Namespace::propery2(Option=Value)
+* @Namespace::propery3()
 * @return baz
 */
 class TestClass { 
@@ -13,9 +15,5 @@ class TestClass {
 }
 
 
-//var_dump(get_class_methods('\Trackpoint\DependencyInjector\DocComment'));
-
-//var_dump(DocComment);
 $reflection = new ReflectionClass('TestClass');
-var_dump($reflection->getDocComment());
-var_dump(Trackpoint\DocComment::parse($reflection->getDocComment()));
+var_dump(DocComment::parse($reflection->getDocComment()));
