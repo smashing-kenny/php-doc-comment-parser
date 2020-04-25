@@ -6,31 +6,34 @@
 - flex
 - php-dev
 
+```shell
 apt install -y bison  
 apt install -y flex  
 apt install -y php-dev  
-
+```
 ## How to build ?
 
 ### Build parse
-
+```shell
 cd src  
 make all  
 cd ..  
-
+```
 ### Build php-extension
 
+```shell
 phpize  
 ./configure  
 
 make  
 sudo make install  
-
+```
 add to php.ini extension=doc.so  
 
 ## Test
+```shell
 php -m | grep DocComment  
-
+```
 
 ## Example
 
