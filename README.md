@@ -47,6 +47,8 @@ use Trackpoint\DocComment;
 * @Namespace::propery1(Option1=Value, Option2=Value)
 * @Namespace::propery2(Option=Value)
 * @Namespace::propery3()
+* @Namespace::propery4([Option=True])
+* @Namespace::propery4([Option=False])
 * @return baz
 */
 class TestClass { 
@@ -62,7 +64,7 @@ var_dump(DocComment::parse($reflection->getDocComment()));
 ```
 array(1) {
   ["NAMESPACE"]=>
-  array(3) {
+  array(4) {
     ["PROPERY1"]=>
     array(2) {
       ["OPTION1"]=>
@@ -77,6 +79,19 @@ array(1) {
     }
     ["PROPERY3"]=>
     array(0) {
+    }
+    ["PROPERY4"]=>
+    array(2) {
+      [0]=>
+      array(1) {
+        ["OPTION"]=>
+        bool(true)
+      }
+      [1]=>
+      array(1) {
+        ["OPTION"]=>
+        bool(false)
+      }
     }
   }
 }
