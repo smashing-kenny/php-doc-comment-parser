@@ -7,6 +7,7 @@
 #include <ctype.h>
 #include <stdlib.h>
 #include <string.h>
+#include <stdbool.h>
 
 //#define KW_STATEMENT 0
 //#define KW_REGISTER 1

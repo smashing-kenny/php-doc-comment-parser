@@ -33,7 +33,11 @@
 }
 
 SCOPE_RESOLUTION        TOKEN(SCOPE_RESOLUTION)
+ARRAY_CLOSE                     TOKEN(ARRAY_CLOSE)
+ARRAY_OPEN                      TOKEN(ARRAY_OPEN)
 ASSIGN                          TOKEN(ASSIGN)
+FALSE                           TOKEN(FALSE)
+TRUE                            TOKEN(TRUE)
 AT                                      TOKEN(AT)
 
 "@" { 
@@ -51,7 +55,17 @@ AT                                      TOKEN(AT)
 	return DOC_SCOPE_RESOLUTION; 
 }
 
-[*-+/(){},.;^%:?\[\]|] { 
+"([" {
+	//printf("DOC_ARRAY_OPEN\n");
+	return DOC_ARRAY_OPEN;
+}
+
+"])" {
+	//printf("DOC_ARRAY_CLOSE\n");
+	return DOC_ARRAY_CLOSE;
+}
+
+[*-+/(),.;^%:?\[\]|] { 
 	//printf("symbols(%s)\n", yytext);
 	return yytext[0]; 
 }
