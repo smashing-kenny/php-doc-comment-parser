@@ -3,36 +3,37 @@
 ## Dependency
 
 - bison
-sudo apt-get install -y bison
-
 - flex
-sudo apt-get install -y flex
-
 - php-dev
-sudo apt-get install -y php-dev
 
-
+```shell
+apt install -y bison  
+apt install -y flex  
+apt install -y php-dev  
+```
 ## How to build ?
 
 ### Build parse
-
-cd src
-make all
-cd ..
-
+```shell
+cd src  
+make all  
+cd ..  
+```
 ### Build php-extension
 
-phpize 
-./configure
+```shell
+phpize  
+./configure  
 
-make
-sudo make install
+make  
+sudo make install  
+```
+add to php.ini extension=doc.so  
 
-add to php.ini extension=doc.so
-
-## Test
-php -m | grep DocComment
-
+## Check
+```shell
+php -m | grep DocComment  
+```
 
 ## Example
 
